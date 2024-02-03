@@ -35,9 +35,9 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
 
-
+console.log(summedPrice);
 //////////////////PROBLEM 2////////////////////
 /*  
     Write a function called `calcFinalPrice` that
@@ -55,8 +55,20 @@ const cart = [
 
 //CODE HERE
 
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    const finalPrice = [cartTotal].reduce((acc, amount) => {
+        const amountWithTax = amount * (1 + tax);
+        const amountAfterCoupon = amountWithTax - couponValue;
+        return amountAfterCoupon;
+    },0);
+    return finalPrice;
+};
+const cartTotal = 125;
+const couponValue = 5;
+const tax = 0.07;
 
-
+const finalPrice = calcFinalPrice(cartTotal, couponValue, tax);
+console.log(finalPrice);
 //////////////////PROBLEM 3////////////////////
 /*  
     In this problem, you'll create a model for 
@@ -79,7 +91,16 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+Name: To store the customer's name. It will address customers personally so the restaurany knows their audience
+Email: For communication purposes, in order to give the customer promotions and order confirmations.
+Phone: Another communication method in order to give customer promotions and phone order confirmations. 
+Membership: To give the customer added benefits from the frequency and total amounts they order. Provides the restaurant information on who their loyal customers are.
 
+Data Types:
+Name: String, because it provides textual data for the restaurant
+Email: String, in order for the restaurant to store the customer's email address
+Phone: Number, to store the customer's phone number
+Membership: String, to store customer's membership type to differentiate each type of customer
 */
 
 /*
@@ -88,3 +109,10 @@ const cart = [
 */
 
 //CODE HERE
+
+const customer = {
+name: 'Beau Pomeroy',
+email: 'Joeschmo@gmail.com',
+phone: 480-555-5666,
+Membership: 'Gold' 
+};
