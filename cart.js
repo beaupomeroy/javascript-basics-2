@@ -114,5 +114,5 @@ const customer = {
 name: 'Beau Pomeroy',
 email: 'Joeschmo@gmail.com',
 phone: 480-555-5666,
-Membership: 'Gold' 
+membership: 'Gold' 
 };
